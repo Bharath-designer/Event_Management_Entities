@@ -1,88 +1,88 @@
 # Event Management App
 
-##Entities
+## Entities
 
 **User**
 
-UserId (PK)
-HashedPassword
-PasswordHashKey
-Role (Client, Admin)
-CreatedDate
+- UserId (PK)
+- HashedPassword
+- PasswordHashKey
+- Role (Client, Admin)
+- CreatedDate
 
 **ClientProfile**
 
-ClientProfileId (PK)
-UserId (FK)
-Email
-FullName
-PhoneNumber
+- ClientProfileId (PK)
+- UserId (FK)
+- Email
+- FullName
+- PhoneNumber
 
 **Event**
 
-EventId (PK)
-EventName
-Description
-CreatedDate
+- EventId (PK)
+- EventName
+- Description
+- CreatedDate
 
 **QuotationRequest**
 
-QuotationRequestId (PK)
-UserId (FK)
-EventId (FK)
-ExpectedPeopleCount
-EventLocation (OwnVenue, PrivateVenue)
-EventDate
-EventType
-FoodPreference
-AdditionalRequirements
-Status (Pending, Accepted, Rejected) (By Admin)
-RequestedDate
+- QuotationRequestId (PK)
+- UserId (FK)
+- EventId (FK)
+- ExpectedPeopleCount
+- EventLocation (OwnVenue, PrivateVenue)
+- EventDate
+- EventType
+- FoodPreference
+- AdditionalRequirements
+- Status (Pending, Accepted, Rejected) (By Admin)
+- RequestedDate
 
 **QuotationResponse**
 
-QuotationResponseId (PK)
-QuotationRequestId (FK)
-QuotedAmount (By the admin)
-ResponseMessage
-Status (Pending, Accepted, Rejected) (By Client)
-ResponseDate
+- QuotationResponseId (PK)
+- QuotationRequestId (FK)
+- QuotedAmount (By the admin)
+- ResponseMessage
+- Status (Pending, Accepted, Rejected) (By Client)
+- ResponseDate
 
 **EventDetails** (If the QuotationRequest is accepted by both)
 
-EventDetailsId (PK)
-QuotationRequestId (FK)
-QuotationResponseId (FK)
-EventSchedule (DateTime)
-VenueDetails
-CateringDetails
-EntertainmentDetails
-SpecialInstructions
+- EventDetailsId (PK)
+- QuotationRequestId (FK)
+- QuotationResponseId (FK)
+- EventSchedule (DateTime)
+- VenueDetails
+- CateringDetails
+- EntertainmentDetails
+- SpecialInstructions
 
 **Payment**
 
-PaymentId (PK)
-QuotationResponsetId (FK)
-Amount
-PaymentDate
-PaymentStatus (Pending, Completed, Failed)
-PaymentMethod (CreditCard, PayPal, etc.)
+- PaymentId (PK)
+- QuotationResponsetId (FK)
+- Amount
+- PaymentDate
+- PaymentStatus (Pending, Completed, Failed)
+- PaymentMethod (CreditCard, PayPal, etc.)
 
 
 **Notification**
 
-NotificationId (PK)
-UserId (FK)
-Message
-NotificationDate
-IsRead
+- NotificationId (PK)
+- UserId (FK)
+- Message
+- NotificationDate
+- IsRead
 
 **Review**
 
-ReviewId (PK)
-QuotationResponseId (FK)
-EventId (FK)
-UserId (FK)
-Rating
-Comments
-ReviewDate
+- ReviewId (PK)
+- QuotationResponseId (FK)
+- EventId (FK)
+- UserId (FK)
+- Rating
+- Comments
+- ReviewDate
